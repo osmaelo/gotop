@@ -109,7 +109,7 @@ To make a custom colorscheme, check out the [template](./colorschemes/template.g
   - [nsf/termbox](https://github.com/nsf/termbox-go)
 - [exrook/drawille-go](https://github.com/exrook/drawille-go)
 - [shirou/gopsutil](https://github.com/shirou/gopsutil)
-- [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser)
+- [goreleaser/nfpm](https://github.com/goreleaser/nfpm)
 - [distatus/battery](https://github.com/distatus/battery)
 
 ## Stargazers over time
