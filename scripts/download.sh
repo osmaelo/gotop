@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-VERSION="2.0.0"
-ARCH=$(uname -sm)
+# https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c
+function get_latest_release_version {
+    curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+    grep '"tag_name":' |                                            # Get tag line
+    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+}
 
 function download {
     ARCHIVE=gotop_${VERSION}_${1}.tgz
@@ -11,6 +15,9 @@ function download {
 }
 
 function main {
+    ARCH=$(uname -sm)
+    VERSION=$(get_latest_release_version 'cjbassi/gotop')
+
     case "${ARCH}" in
         # order matters
         Darwin\ *64)        download darwin_amd64   ;;
