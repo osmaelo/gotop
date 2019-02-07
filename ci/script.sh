@@ -5,7 +5,7 @@ go build -o ${NAME}
 if [[ ${GOARCH} == "arm64" ]]; then
     FILE=${NAME}_${TRAVIS_TAG}_${GOOS}_arm8
 else
-    FILE=${NAME}_${TRAVIS_TAG}_${GOOS}_${GOARCH}${GOARM}
+    FILE=${NAME}_${TRAVIS_BRANCH}_${GOOS}_${GOARCH}${GOARM}
 fi
 
 tar -czf dist/${FILE}.tgz ${NAME}
